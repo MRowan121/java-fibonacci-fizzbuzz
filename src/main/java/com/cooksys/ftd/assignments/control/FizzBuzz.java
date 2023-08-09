@@ -1,7 +1,5 @@
 package com.cooksys.ftd.assignments.control;
 
-import com.cooksys.ftd.assignments.control.util.MissingImplementationException;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,7 +87,9 @@ public class FizzBuzz {
      * the relevant messages to sysout
      */
     public static void main(String[] args) {
-        throw new MissingImplementationException();
+        for(int i = 1; i <= 115; i++) {
+            System.out.println(message(i));
+        }
     }
 
 }
