@@ -24,7 +24,19 @@ public class Fibonacci {
      * @throws IllegalArgumentException if the given index is less than zero
      */
     public static int atIndex(int i) throws IllegalArgumentException {
-        throw new MissingImplementationException();
+        if (i < 0) {
+            throw new IllegalArgumentException();
+        }
+        if(i == 0 || i == 1) {
+            return 1;
+        }
+        int[] fibonacciArray = new int[i + 1];
+        fibonacciArray[0] = 1;
+        fibonacciArray[1] = 1;
+        for(int j = 2; j <= i; j++) {
+            fibonacciArray[j] = fibonacciArray[j - 1] + fibonacciArray[j - 2];
+        }
+        return fibonacciArray[i];
     }
 
     /**
