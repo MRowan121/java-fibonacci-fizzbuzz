@@ -2,6 +2,9 @@ package com.cooksys.ftd.assignments.control;
 
 import com.cooksys.ftd.assignments.control.util.MissingImplementationException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * FizzBuzz is an old programming exercise.
@@ -67,7 +70,18 @@ public class FizzBuzz {
      * @throws IllegalArgumentException if the given end is less than the given start
      */
     public static String[] messages(int start, int end) throws IllegalArgumentException {
-        throw new MissingImplementationException();
+        if (end < start) {
+            throw new IllegalArgumentException();
+        }
+
+        List<String> messages = new ArrayList<>();
+
+        for(int i = start; i < end; i++) {
+            if(message(i) != null) {
+                messages.add(message(i));
+            }
+        }
+        return messages.toArray(new String[0]);
     }
 
     /**
