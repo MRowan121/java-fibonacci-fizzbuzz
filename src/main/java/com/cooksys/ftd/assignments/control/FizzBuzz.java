@@ -27,7 +27,10 @@ public class FizzBuzz {
      * @throws IllegalArgumentException if b is zero
      */
     public static boolean divides(int a, int b) throws IllegalArgumentException {
-        throw new MissingImplementationException();
+        if (b == 0) {
+            throw new IllegalArgumentException();
+        }
+        return a % b == 0;
     }
 
     /**
@@ -51,7 +54,7 @@ public class FizzBuzz {
      * it should be excluded from the resulting array.
      *
      * @param start the number to start with (inclusive)
-     * @param end the number to end with (exclusive)
+     * @param end   the number to end with (exclusive)
      * @return an array of divisibility messages
      * @throws IllegalArgumentException if the given end is less than the given start
      */
