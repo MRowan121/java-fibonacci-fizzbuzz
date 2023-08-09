@@ -1,7 +1,5 @@
 package com.cooksys.ftd.assignments.control;
 
-import com.cooksys.ftd.assignments.control.util.MissingImplementationException;
-
 /**
  * The Fibonacci sequence is simply and recursively defined: the first two elements are `1`, and
  * every other element is equal to the sum of its two preceding elements. For example:
@@ -67,9 +65,12 @@ public class Fibonacci {
      *
      * @param count the number of elements to calculate
      * @return the beginning of the fibonacci sequence, up to the given count, as an array of int elements
-     * @throws IllegalArgumentException if the given count is negative
+     * @throws IllegalArgumentException if the given count is ®negative
      */
     public static int[] fibonacci(int count) throws IllegalArgumentException {
-        throw new MissingImplementationException();
+        if (count < 0) {
+            throw new IllegalArgumentException();
+        }
+        return slice(0, count);
     }
 }
