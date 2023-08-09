@@ -45,7 +45,15 @@ public class FizzBuzz {
      * @return a message according to the format above, or null if n is not divisible by either 3 or 5
      */
     public static String message(int n) {
-        throw new MissingImplementationException();
+        if (n % 3 == 0 && n % 5 == 0) {
+            return n + ": FizzBuzz";
+        } else if (n % 3 == 0) {
+            return n + ": Fizz";
+        } else if (n % 5 == 0) {
+            return n + ": Buzz";
+        } else {
+            return null;
+        }
     }
 
     /**
