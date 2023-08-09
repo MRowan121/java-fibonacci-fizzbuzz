@@ -27,13 +27,13 @@ public class Fibonacci {
         if (i < 0) {
             throw new IllegalArgumentException();
         }
-        if(i == 0 || i == 1) {
+        if (i == 0 || i == 1) {
             return 1;
         }
         int[] fibonacciArray = new int[i + 1];
         fibonacciArray[0] = 1;
         fibonacciArray[1] = 1;
-        for(int j = 2; j <= i; j++) {
+        for (int j = 2; j <= i; j++) {
             fibonacciArray[j] = fibonacciArray[j - 1] + fibonacciArray[j - 2];
         }
         return fibonacciArray[i];
@@ -50,7 +50,16 @@ public class Fibonacci {
      *                                  given end is less than the given start
      */
     public static int[] slice(int start, int end) throws IllegalArgumentException {
-        throw new MissingImplementationException();
+        if (start < 0 || end < 0 || start > end) {
+            throw new IllegalArgumentException();
+        }
+
+        int[] piece = new int[end - start];
+        for (int i = 0; i < piece.length; i++) {
+            piece[i] = atIndex(i + start);
+        }
+
+        return piece;
     }
 
     /**
